@@ -1,61 +1,24 @@
-import { useState } from 'react';
 import classNames from 'classnames/bind';
 //Tippy
-import HeadLessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
 // Font
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faArrowUpFromBracket,
-    faCircleXmark,
-    faGear,
-    faMagnifyingGlass,
-    faShirt,
-    faSpinner,
-} from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpFromBracket, faGear, faShirt } from '@fortawesome/free-solid-svg-icons';
 import { faGem } from '@fortawesome/free-regular-svg-icons';
 
 import styles from './Header.module.scss';
-import { Wrapper as PopperWrapper } from '../../../../components/Popper';
-import AccountItem from '../../../AccountItem';
+
 import Button from '../../../Button';
 import Image from '../../../Image';
+import Search from '../../../Search';
 
 const cx = classNames.bind(styles);
 function Header() {
-    const [searchResult, setSearchResult] = useState([1, 2]);
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div>
-                    <HeadLessTippy
-                        visible={searchResult.length > 0}
-                        interactive
-                        render={(attrs) => (
-                            <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                                <PopperWrapper>
-                                    <h4 className={cx('search-title')}>Gợi ý kết quả</h4>
-                                    <AccountItem />
-                                </PopperWrapper>
-                            </div>
-                        )}
-                    >
-                        <div className={cx('search')}>
-                            <input placeholder="Tìm kiếm lời bài hát, nghệ sĩ...." spellCheck={false} />
-
-                            <button className={cx('clear-loading')}>
-                                <FontAwesomeIcon className={cx('clear')} icon={faCircleXmark} />
-                                <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
-                            </button>
-
-                            <button className={cx('search-btn')}>
-                                <FontAwesomeIcon icon={faMagnifyingGlass} />
-                            </button>
-                        </div>
-                    </HeadLessTippy>
-                </div>
-
+                <Search />
                 <div className={cx('action')}>
                     <Tippy content="Chủ đề">
                         <Button type="circle">
