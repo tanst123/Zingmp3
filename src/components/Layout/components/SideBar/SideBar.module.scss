@@ -1,0 +1,8 @@
+.wrapper {
+    position: fixed;
+    top: 0;
+    bottom: var(--Footer-height);
+    left: 0;
+    width: var(--sideBar-width);
+    background-color: var(--background-primary);
+}

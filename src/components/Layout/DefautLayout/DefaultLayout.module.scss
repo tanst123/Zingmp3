@@ -1,0 +1,8 @@
+.container {
+    height: 1000px;
+    background-color: #170F23;
+    width: calc(100% - var(--sideBar-width));
+    margin-left: var(--sideBar-width);
+}
+.content {
+}
