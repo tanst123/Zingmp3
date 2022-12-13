@@ -2,17 +2,13 @@
     padding: 8px 10px;
     cursor: pointer;
     border-radius: 5px;
-
+    display: flex;
+    align-items: center;
     &:hover {
         background-color: #43345a;
     }
 }
-.link {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
+
 .avatar {
     width: 52px;
     height: 52px;
@@ -31,4 +27,13 @@
     font-size: 1.2rem;
     font-weight: 400;
     opacity: 0.6;
+    display: flex;
+}
+
+.icon {
+    padding: 8px 6px;
+    font-size: 0.6rem;
+}
+.followers_count {
+    margin-right: 3px;
 }

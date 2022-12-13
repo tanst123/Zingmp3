@@ -1,12 +1,14 @@
-// Layout
-import { HeaderOnly } from '../components/Layout';
-
 // page
 import Discover from '../pages/Discover';
 import Home from '../pages/Home';
 import Radio from '../pages/Radio';
 import Follow from '../pages/Follow';
-import ZingChat from '../pages/ZingChat';
+import ZingChart from '../pages/ZingChart';
+import Profile from '../pages/Profile';
+import Category from '../pages/Category';
+import Top100 from '../pages/Top100';
+import NewMusic from '../pages/NewMusic';
+import MV from '../pages/MV';
 
 // Các trang không cần đăng nhập
 const publicRoutes = [
@@ -17,20 +19,38 @@ const publicRoutes = [
     {
         path: '/discover',
         component: Discover,
-        layout: HeaderOnly,
     },
     {
         path: '/radio',
         component: Radio,
-        layout: null,
     },
     {
         path: '/follow',
         component: Follow,
     },
     {
-        path: '/zingChat',
-        component: ZingChat,
+        path: '/zingchart',
+        component: ZingChart,
+    },
+    {
+        path: '/category',
+        component: Category,
+    },
+    {
+        path: '/top100',
+        component: Top100,
+    },
+    {
+        path: '/mv',
+        component: MV,
+    },
+    {
+        path: '/newmusic',
+        component: NewMusic,
+    },
+    {
+        path: '/@:nickname',
+        component: Profile,
     },
 ];
 

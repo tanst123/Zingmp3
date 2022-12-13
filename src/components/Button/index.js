@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, useState } from 'react';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 
@@ -11,6 +11,7 @@ const Button = forwardRef(
         {
             to,
             href,
+
             onClick,
             children,
             type,
@@ -20,6 +21,7 @@ const Button = forwardRef(
             leftIcon,
             rightIcon,
             className,
+            className1,
             ...passProps
         },
         ref,
@@ -49,6 +51,7 @@ const Button = forwardRef(
 
         const classes = cx('wrapper', {
             [className]: className,
+            [className1]: className1,
             [type]: type,
             [size]: size,
             disable,
@@ -59,7 +62,7 @@ const Button = forwardRef(
             <Comp className={classes} {...props} ref={ref}>
                 {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
                 <span className={cx('children')}>{children}</span>
-                {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
+                {rightIcon && <span className={cx('icon', className1)}>{rightIcon}</span>}
             </Comp>
         );
     },

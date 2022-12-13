@@ -6,3 +6,133 @@
     width: var(--sideBar-width);
     background-color: var(--background-primary);
 }
+.wrapper-logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    padding: 0 25px;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+.logo {
+    width: 130px;
+    height: auto;
+}
+.wrapper-btn {
+    width: 100%;
+}
+.wrapper-btn__top,
+.wrapper-btn__bottom {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+
+    .custom-btn {
+        border-radius: 0;
+        padding: 8px 25px;
+        font-size: 1.3rem;
+        color: var(--text-color-header);
+        margin-left: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-weight: 700;
+        text-transform: none;
+    }
+}
+.wrapper-btn__top {
+    position: relative;
+    padding: 0 0 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+        right: 20px;
+        height: 1px;
+        background-color: var(--text-color);
+        opacity: 0.1;
+    }
+}
+.custom-btn {
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.wrapper-btn__bottom {
+    height: 240px;
+    overflow: hidden;
+    overflow-y: auto;
+
+    .custom-btn {
+        padding: 8px 20px;
+    }
+}
+
+.container-login,
+.container-updateVip {
+    width: 200px;
+    background: linear-gradient(to bottom right, #9b4de0 30%, #af67ee 60%, #8d2fdf 100%);
+    margin-bottom: 12px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 12px 16px 12px;
+
+    .text {
+        font-size: 1.2rem;
+        line-height: 2rem;
+        margin-bottom: 12px;
+        color: var(--text-color);
+        text-align: center;
+    }
+}
+.container-login {
+    margin-top: 16px;
+}
+.container-updateVip {
+    margin-bottom: 16px;
+}
+// Scrollbar
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(114, 113, 113);
+    border-radius: 10px;
+    height: 150px;
+}
+
+.more-playlist {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .custom-btn-playlist {
+        width: 100%;
+        height: 100%;
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+// Active
+.active {
+    background: linear-gradient(to right, var(--primary) 20%, #3a3344 40%, #5e05da 60%, #70519c 80%, #7826eb 90%);
+}

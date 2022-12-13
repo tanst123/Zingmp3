@@ -1,0 +1,43 @@
+.wrapper {
+    background-color: #34224f;
+    color: var(--text-color-header);
+    padding: 6px 15px;
+    cursor: pointer;
+
+    .title {
+        color: var(--text-color);
+        font-weight: 600;
+        font-size: 1.4rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .icon {
+        font-size: 0.6rem;
+        margin: 0 6px;
+    }
+
+    &:hover {
+        background-color: #43345a;
+    }
+}
+
+.description {
+    width: 100%;
+    margin-top: 8px;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+        text-align: justify;
+        flex: 1;
+        line-height: 1.9rem;
+        opacity: 0.7;
+    }
+
+    .icon-check {
+        font-size: 1.8rem;
+        padding-left: 10px;
+    }
+}

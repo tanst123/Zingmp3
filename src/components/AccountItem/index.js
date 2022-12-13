@@ -1,23 +1,29 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
+
 import styles from './AccountItem.module.scss';
+import Image from '../Image';
 
 const cx = classNames.bind(styles);
 
-function AccountItem() {
+function AccountItem({ data }) {
     return (
-        <div className={cx('wrapper')}>
-            <a  className={cx('link')} href='a'>
-            <img
-                className={cx('avatar')}
-                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-aiso/557695794d1cb0b4a32322da33aac45d~c5_100x100.jpeg?x-expires=1670860800&x-signature=9UAs33y5wRCrzjVCUoB2BuTMrzc%3D"
-                alt=""
-            />
+        <Link to={`/@${data.nickname}`} className={cx('wrapper')}>
+            <Image className={cx('avatar')} src={data.avatar} alt={data.nickname} />
             <div className={cx('info')}>
-                <h4 className={cx('name')}>Mỹ Tâm</h4>
-                <p className={cx('note')}>Nghệ sĩ</p>
+                <h4 className={cx('name')}>{data.full_name}</h4>
+                <div className={cx('note')}>
+                    <span>{data.nickname}</span>
+                    
+                    <p>
+                        <span className={cx('followers_count')}>{data.followers_count}</span>
+                        quan tâm
+                    </p>
+                </div>
             </div>
-            </a>
-        </div>
+        </Link>
     );
 }
 export default AccountItem;
